@@ -35,8 +35,8 @@ function buscarPorReparto(personaBuscada){
     const DB = leerTrailerFlix();
     const resultadoPorReparto = DB.filter(item => item.reparto.toLowerCase().includes(personaBuscada.toLowerCase())) 
         if (resultadoPorReparto == []) {
-           return [{error: `Error en la categoría`,
-        descripcion: `Lo siento, no se encontraron items con la categoría buscada: ${personaBuscada}`}]
+           return [{error: `Error en el reparto`,
+        descripcion: `Lo siento, no se encontraron items con el reparto buscado: ${personaBuscada}`}]
         }
     
     const resultadoPorRepartoMap = resultadoPorReparto.map((item) => {
@@ -61,7 +61,7 @@ function buscarTrailerPorId(id){
     const resultadoPorIdMap =  {
             id: resultadoPorId.id,
             titulo: resultadoPorId.titulo,
-            trailer: resultadoPorId.trailer || "",
+            trailer: resultadoPorId.trailer || "No posee trailer",
         }
        return resultadoPorIdMap;  
     };
